@@ -6,20 +6,20 @@ print(f" TimeStamp {timestamp_str}")
 import requests
 import re
 
-url = "https://arcraiders.com/"
+url = "Enter the link of the website"
 
 headers = {
-    "User-Agent": "Google/5.0"
+    "User-Agent": "Mozilla/5.0"
 }
 
 response = requests.get(url, headers=headers)
 
-with open("game.html", "w", encoding="utf-8") as f:
+with open("file_name.html", "w", encoding="utf-8") as f:
     f.write(response.text)
 
 print("HTML page saved successfully as contact_us.html")
 
-with open("game.html", "r", encoding="utf-8") as f:
+with open("file_name.html", "r", encoding="utf-8") as f:
     content = f.read()
 
 link_pattern = r"https?://[^\s\"'>]+"
@@ -28,7 +28,7 @@ links = re.findall(link_pattern, content)
 
 link_unique = set(links)
 
-with open("game_output.txt", "w", encoding="utf-8") as f:
+with open("file_name_output.txt", "w", encoding="utf-8") as f:
 
     f.write("Link Pattern Used:\n")
     f.write(link_pattern + "\n\n")
